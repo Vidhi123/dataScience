@@ -1,0 +1,6 @@
+install.packages("RODBC")
+library(RODBC)
+odbcDataSources()
+chan=odbcConnect("PostgreSQL30","postgres;Password=vidhi123;Database=new_diamonds")
+sqlTables(chan)
+sqlFetch(chan,"diamonds",max=10)
